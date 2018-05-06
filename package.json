@@ -28,7 +28,8 @@
   },
   "dependencies": {
     "got": "^8.1.0",
-    "proxy-agent": "^3.0.0"
+    "proxy-agent": "^3.0.0",
+    "url": "^0.11.0"
   },
   "devDependencies": {
     "eslint": "^4.17.0"
