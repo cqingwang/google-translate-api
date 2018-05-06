@@ -2,8 +2,15 @@ const URI = require('url');
 // const HttpsAgent = require('https-proxy-agent');
 const HttpAgent = require('proxy-agent');
 
+let agentServer=''
+const setProxy=(proxy)=>{
+  agentServer=proxy
+}
 
-const shadowSocksAgent = (proxy='http://0.0.0.0:1087') => {
+const shadowSocksAgent = (proxy=agentServer) => {
+  if(!proxy){
+    return null
+  }
   const options = URI.parse(proxy);
   // options = {...options, secureProxy: false}
 
@@ -19,3 +26,4 @@ const got=(url,options={})=>{
 }
 
 module.exports=got
+module.exports.setProxy=setProxy

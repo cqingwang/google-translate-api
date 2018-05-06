@@ -71,9 +71,7 @@ async function translate(text, options) {
           method: 'POST',
           body: {
             q: text
-          },
-          proxy:options.proxy,
-          agent:options.agent
+          }
         }
       ];
       requestOptions[1] = JSON.stringify(requestOptions[1]);
@@ -154,4 +152,5 @@ async function translate(text, options) {
 }
 
 module.exports = translate;
+module.exports.setProxy=got.setProxy
 module.exports.languages = languages;
