@@ -1,5 +1,5 @@
 {
-  "name": "@k3rn31p4nic/google-translate-api",
+  "name": "google-translate-api",
   "version": "1.0.4",
   "description": "A Node.JS library to consume Google Translate for free.",
   "main": "src/index.js",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/k3rn31p4nic/google-translate-api.git"
+    "url": "https://github.com/cqingwang/google-translate-api.git"
   },
   "keywords": [
     "google translate api",
@@ -24,7 +24,7 @@
   "author": "Sankarsan Kampa (a.k.a. k3rn31p4nic)",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/k3rn31p4nic/google-translate-api/issues"
+    "url": "https://github.com/cqingwang/google-translate-api/issues"
   },
   "dependencies": {
     "got": "^8.1.0"

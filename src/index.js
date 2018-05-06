@@ -1,8 +1,9 @@
+
+const got=require('./got')
+
 const languages = require('./languages');
 const tokenGenerator = require('./tokenGenerator');
 const querystring = require('querystring');
-const got = require('got');
-
 /**
  * @function translate
  * @param {String} text The text to be translated.
@@ -13,7 +14,7 @@ async function translate(text, options) {
   try {
     if (typeof options !== 'object') options = {};
     text = String(text);
-
+    const agent={}
     // Check if a lanugage is in supported; if not, throw an error object.
     let error;
     [ options.from, options.to ].forEach((lang) => {
@@ -70,7 +71,9 @@ async function translate(text, options) {
           method: 'POST',
           body: {
             q: text
-          }
+          },
+          proxy:options.proxy,
+          agent:options.agent
         }
       ];
       requestOptions[1] = JSON.stringify(requestOptions[1]);

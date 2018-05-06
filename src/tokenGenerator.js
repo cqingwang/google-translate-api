@@ -1,11 +1,5 @@
-/**
- * Last update: 2/11/2018
- * https://translate.google.com/translate/releases/twsfe_w_20160620_RC00/r/js/desktop_module_main.js
- *
- * Everything between 'BEGIN' and 'END' was copied from the script above.
- */
 
-const got = require('got');
+const got=require('./got')
 
 /* eslint-disable */
 // BEGIN
@@ -74,7 +68,10 @@ function updateTKK() {
         resolve();
       }
       else {
-        let res = await got('https://translate.google.com');
+        let res = await got('https://translate.google.com',{
+          proxy:options.proxy,
+          agent:options.agent
+        });
 
         const code = res.body.match(/TKK=(.*?)\(\)\)'\);/g);
 
